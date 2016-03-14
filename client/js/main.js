@@ -8,6 +8,13 @@ $(document).ready(function(){
 
 	function getData() {
 		/*This function should make a get request from 'database', parse the data and prepend each to the page*/
+        
+        $.ajax({
+            url: 'http://localhost:3000/messages',
+            method: 'GET',
+        }).then(function(result) {
+            console.log(result);
+        });
 	}
 
 	/*Calls function once page loaded to display tweets to page*/
