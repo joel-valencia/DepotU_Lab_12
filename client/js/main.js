@@ -24,7 +24,12 @@ $(document).ready(function(){
                 //console.log(posts[i]);
                 posts[i] = JSON.parse(posts[i]);
             }
-            console.log(posts);
+            //console.log(posts);
+            
+            for (var i in posts) {
+                //console.log(posts[i].text);
+                $('#container').prepend('<div class="post"><div class="post_username">' + posts[i].userName + '</div><div class="post_content">' + posts[i].text + '</div></div>')
+            }
         });
 	}
 
