@@ -13,7 +13,18 @@ $(document).ready(function(){
             url: 'http://localhost:3000/messages',
             method: 'GET',
         }).then(function(result) {
-            console.log(result);
+            //console.log(result);
+            var posts = result.split("\n");
+            for (var i in posts) {
+                if (posts[i] == "") {
+                    delete posts[i];
+                }
+            }
+            for (var i in posts) {
+                //console.log(posts[i]);
+                posts[i] = JSON.parse(posts[i]);
+            }
+            console.log(posts);
         });
 	}
 
