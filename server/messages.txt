@@ -9,3 +9,4 @@
 {"text":"8-bit High Life cred!","userName":"bot"}
 
 {"text":"8-bit High Life cred!","userName":"bot"}
+{"text":"sdffsdsfdfsdfsd","userName":"user"}

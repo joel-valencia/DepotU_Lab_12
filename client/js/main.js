@@ -4,6 +4,22 @@ $(document).ready(function(){
 		/*This function should create a post request using jquery. When posted it should:
 			1) Add tweets to the 'database'
 			2) After posted prepend message to list of messages and clear input box */
+            
+            //console.log($('#compose').val());
+            var toAdd = {}
+            toAdd.text = $('#compose').val();
+            toAdd.userName = 'user';
+            //console.log(toAdd);
+            //console.log(JSON.stringify(toAdd));
+            var stringified = JSON.stringify(toAdd);
+            
+            $.ajax({
+                url: 'http://localhost:3000/messages',
+                method: 'POST',
+                data: stringified
+            }).then(function(result) {
+                
+            });
 	}
 
 	function getData() {
@@ -11,7 +27,7 @@ $(document).ready(function(){
         
         $.ajax({
             url: 'http://localhost:3000/messages',
-            method: 'GET',
+            method: 'GET'
         }).then(function(result) {
             //console.log(result);
             var posts = result.split("\n");
@@ -35,4 +51,8 @@ $(document).ready(function(){
 
 	/*Calls function once page loaded to display tweets to page*/
 	getData();
+    
+    $('#send').click(function() {
+       postData(); 
+    });
 });
