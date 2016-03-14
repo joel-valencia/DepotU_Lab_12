@@ -20,6 +20,7 @@ $(document).ready(function(){
                 data: stringified
             }).then(function(result) {
                 $('#compose').val("");
+                $('#container').prepend('<div class="post"><div class="post_username">' + toAdd.userName + '</div><div class="post_content">' + toAdd.text + '</div></div>');
             });
 	}
 
@@ -45,7 +46,7 @@ $(document).ready(function(){
             
             for (var i in posts) {
                 //console.log(posts[i].text);
-                $('#container').prepend('<div class="post"><div class="post_username">' + posts[i].userName + '</div><div class="post_content">' + posts[i].text + '</div></div>')
+                $('#container').prepend('<div class="post"><div class="post_username">' + posts[i].userName + '</div><div class="post_content">' + posts[i].text + '</div></div>');
             }
         });
 	}
