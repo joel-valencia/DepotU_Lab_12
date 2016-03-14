@@ -6,6 +6,7 @@ $(document).ready(function(){
 			2) After posted prepend message to list of messages and clear input box */
             
             //console.log($('#compose').val());
+            
             var toAdd = {}
             toAdd.text = $('#compose').val();
             toAdd.userName = 'user';
@@ -18,7 +19,7 @@ $(document).ready(function(){
                 method: 'POST',
                 data: stringified
             }).then(function(result) {
-                
+                $('#compose').val("");
             });
 	}
 

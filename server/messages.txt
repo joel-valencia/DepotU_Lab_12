@@ -10,3 +10,7 @@
 
 {"text":"8-bit High Life cred!","userName":"bot"}
 {"text":"sdffsdsfdfsdfsd","userName":"user"}
+{"text":"","userName":"user"}
+{"text":"","userName":"user"}
+{"text":"fsfdsdfsd","userName":"user"}
+{"text":"fsdsssdfds","userName":"user"}
