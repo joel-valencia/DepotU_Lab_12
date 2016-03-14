@@ -20,6 +20,7 @@ $(document).ready(function(){
                 data: stringified
             }).then(function(result) {
                 $('#compose').val("");
+                $('#send').prop('disabled', true);
                 $('#container').prepend('<div class="post"><div class="post_username">' + toAdd.userName + '</div><div class="post_content">' + toAdd.text + '</div></div>');
             });
 	}
@@ -54,7 +55,17 @@ $(document).ready(function(){
 	/*Calls function once page loaded to display tweets to page*/
 	getData();
     
+    $('#send').prop('disabled', true);
+    
     $('#send').click(function() {
        postData(); 
+    });
+    
+    $('#compose').keyup(function() {
+       if ($('#compose').val() == "") {
+           $('#send').prop('disabled', true);
+       } else {
+           $('#send').prop('disabled', false);
+       }
     });
 });
